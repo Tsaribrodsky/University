@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    color: #daa520;
+    background-color: #f8edd2;
+    font-size: 18px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    height: 50px;
+    background-color: #daa520;
+    border-bottom: 1px solid #f8edd2;
+}
+
+header p.home {
+    margin-left: 30px;
+    margin-top: 10px;
+    height: 50px;
+    width: 80px;
+}
+
+header a.home {
+    text-decoration: none;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+header p.sexCenter {
+    position: absolute;
+    top: 0;
+    color: #f2fcfc;
+    left: 170px;
+    font-size: 18px;
+    right: 65px;
+    text-align: center;
+    padding-right: 65px;
+}
+
+header p.home {
+    text-decoration: none;
+    margin-right: 30px;
+    margin-top: 10px;
+    height: 50px;
+    width: 80px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.sex::before {
+    content: "";
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #daa520;
+}
+
+div#sex {
+    width: 100%;
+    left: 0;
+    bottom: 50%;
+    top: 60px;
+    margin-left: 0;
+    background-image: url("sex.gif");
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+section.sex div {
+    position: absolute;
+    top: 70%;
+    margin: auto;
+    width: 99%;
+}
+
+section.sex p {
+    margin: auto;
+    color: #a708a2;
+    font-size: 26px;
+    text-align: center;
+}
+
+.next {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #5fe6c1;;
+    color: white;
+    right: 30px;
+    position: absolute;
+    top: 50vh;
+    margin-top: -26px;
+    cursor: pointer;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+a.next:hover {
+    background-color: #f2fcfc;
+    color: black;
+}

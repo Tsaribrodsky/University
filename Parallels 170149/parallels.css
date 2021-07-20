@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    text-align:center;
+}
+
+header {
+    margin-left: 30px;
+    margin-top: 10px;
+    height: 50px;
+    width: 80px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: #BDD750;
+}
+
+div.container {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+div.text {
+    position: absolute;
+    height: 33%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div svg {
+    width: 257px;
+    height: 45px;
+    position: relative;
+    display: block;
+    margin: 0 auto 29px auto;
+}
+
+p.topics {
+    width: 450px;
+    height: 46px;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 auto;
+    font-family: Verdana, sans-serif;
+
+
+}
+
+table {
+    position: absolute;
+    top: 115%;
+    width: 500px;
+    margin-left: 32%;
+    border-collapse: collapse;
+}
+
+td {
+    width: 150px;
+    height: 130px;
+    text-align: center;
+}
+
+td :hover {
+    font-size: 32px;
+}
+
+a {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+}
+td.happiness, a.happiness {
+    background-color: #ffbf00;
+    color: #a708a2;
+}
+
+td.meat, a.meat {
+    background-color: #ff4500;
+    color: #FFDFF7;
+}
+
+td.sleep, a.sleep {
+    background-color: #40e0d0;
+    color: #0000FF;
+}
+
+td.alcohol, a.alcohol {
+    background-color: #57B448;
+    color: #044E24;
+}
+
+td.sex, a.sex {
+    background-color: #a708a2;
+    color: #F8EDD2;
+}
+
+td.water, a.water {
+    background-color: #00adef;
+    color: #0D2559;
+}
+
+a.happiness:hover {
+    color: #00adef;
+}
+
+a.meat:hover {
+    color: #F0E68C;
+}
+
+a.alcohol:hover {
+    color: #F77901;
+}
