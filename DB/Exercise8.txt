@@ -1,0 +1,112 @@
+1.1 
+select starname as name
+from starsin
+where movietitle = 'Terms of Endearment'
+intersect
+select name
+from moviestar
+where gender = 'M'
+
+1.2
+select s.starname
+from movie as m
+inner join starsin as s on s.movietitle = m.title
+where m.year = 1995 and m.studioname = 'MGM'
+
+1.3
+select distinct mex.name
+from movieexec as mex
+inner join movie as m on mex.cert# = m.producerc#
+where m.studioname = 'MGM'
+
+1.4
+select title
+from movie
+where length>(select length from movie where title = 'Gone With the Wind')
+
+1.5
+select m.title
+from movieexec as mex
+inner join movie as m on mex.cert# = m.producerc#
+where mex.networth>(select networth from movieexec where name = 'Mery Griffin')
+
+1.6
+select s.name
+from moviestar as s
+left join starsin as st on s.name = st.starname
+where st.movietitle is null
+
+1.7
+select *
+from movie
+cross join moviestar
+
+2.1
+select p.maker, p.model, p.type
+from product as p
+left join pc on p.model = pc.model
+left join printer as pr on p.model = pr.model
+left join laptop as l on p.model = l.model
+where pc.code is null and pr.code is null and l.code is null
+
+2.2
+select p.maker, p.model, pc.price
+from product as p
+inner join pc on pc.model = p.model
+where p.maker = 'B'
+union
+select p.maker, p.model, l.price
+from product as p
+inner join laptop as l on l.model = p.model
+where p.maker = 'B'
+union
+select p.maker, p.model, pr.price
+from product as p
+inner join printer as pr on pr.model = p.model
+where p.maker = 'B'
+
+2.3
+select distinct model, speed, ram
+from pc
+group by model,speed,ram
+having count(speed)>1
+and count(ram)>1
+
+2.4
+select distinct p.maker, pc.model
+from product as p
+inner join pc on p.model = pc.model
+where pc.speed>=400
+group by p.maker, pc.model, pc.speed
+having count(pc.model)>1
+
+3.1
+select c.country
+from classes as c
+inner join classes as c1 on c.type<>c1.type and c.country = c1.country
+intersect
+select country
+from classes
+
+3.2
+select s.ship
+from outcomes as s
+inner join outcomes as o on s.ship = o.ship and s.result<>o.result
+where s.result = 'damaged'
+
+3.3
+select *
+from classes as c
+inner join ships as s on c.class=s.class
+
+3.4
+select *
+from classes as c
+left join ships as s on c.class = s.class or c.class = s.name
+
+3.5
+select name ship
+from ships
+minus
+select ship
+from outcomes

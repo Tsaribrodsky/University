@@ -1,0 +1,110 @@
+2.1
+select name ship
+from ships
+minus
+select ship
+from outcomes
+
+2.2
+select p.maker,avg(l.screen)
+from product as p
+inner join laptop as l on p.model = l.model
+group by p.maker
+
+2.3
+select avg(speed)
+from  laptop 
+where price>1000
+
+2.4
+select p.maker,avg(pc.price)
+from product as p
+inner join pc on p.model = pc.model
+group by p.maker
+having p.maker = 'A'
+
+2.5
+with t as(select avg(pc.price) price
+from product as p
+inner join pc on p.model = pc.model
+where p.maker = 'B')
+select avg(l.price+t.price)
+from product as p
+inner join laptop as l on p.model = l.model
+cross join t
+where p.maker = 'B'
+
+2.6
+select speed,avg(price)
+from  pc 
+group by speed
+
+2.7
+select maker
+from product
+where type = 'PC'
+group by maker
+having count(distinct model) >= 3
+
+2.8
+select p.maker,max(pc.price)
+from product as p 
+inner join pc on p.model = pc.model
+group by p.maker
+order by 2 desc
+
+2.9
+select speed,avg(price)
+from  pc 
+where speed > 800
+group by speed
+
+2.10
+select p.maker, avg(pc.hd)
+from product as p
+inner join pc on p.model = pc.model
+where type <> 'Laptop'
+group by p.maker
+
+3.1
+select count(distinct class)
+from classes
+
+3.2
+select c.class,avg(c.numguns)
+from classes as c
+inner join ships as s on c.class = s.class
+group by c.class
+
+
+3.3
+select avg(c.numguns)
+from classes as c
+inner join ships as s on c.class = s.class
+
+3.4
+select c.class,min(s.launched),max(s.launched)
+from classes as c
+inner join ships as s on c.class = s.class
+group by c.class
+
+3.5
+select s.class,count(o.ship)
+from outcomes as o
+inner join ships as s on o.ship = s.name
+where o.result = 'sunk'
+group by s.class
+
+3.6
+select s.class,count(o.ship)
+from outcomes as o
+inner join ships as s on o.ship = s.name
+where o.result = 'sunk'
+group by s.class
+having count(s.class)>2
+
+3.7
+select c.country,avg(c.displacement)
+from classes as c
+inner join ships as s on c.class = s.class
+group by c.country

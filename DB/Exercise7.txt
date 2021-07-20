@@ -1,0 +1,95 @@
+1.1
+select p.maker,l.speed
+from product as p
+natural join laptop as l 
+where l.hd >= 9
+
+1.2
+select p.maker,l.speed
+from product as p
+inner join laptop as l using(model) 
+where l.hd >= 9
+
+1.3
+select p.maker,l.speed
+from product as p
+inner join laptop as l on p.model=l.model 
+where l.hd >= 9
+
+1.4
+select hd, count(hd)
+from PC
+group by hd
+having count(hd) >=2
+
+2.1
+select starname
+from starsin
+where movietitle = 'Terms of Endearment'
+
+2.2
+select p.name, m.title
+from movieexec as p
+inner join movie as m on p.cert# = m.producerc#
+where p.name = 'George Lucas'
+
+2.3
+select p.name, m.title
+from starsin as s
+inner join movie as m on s.movietitle = m.title
+inner join movieexec as p on m.producerc# = p.cert#  
+where s.starname = 'Harrison Ford'
+
+2.4
+select s.name,st.starname
+from studio as s
+left join movie as m on s.name = m.studioname
+inner join starsin as st on m.title = st.movietitle
+order by 1 asc
+
+2.5
+select s.starname,m.networth
+from movieexec as m
+left join movie as mv on m.cert# = mv.producerc#
+inner join starsin as s on mv.title = s.movietitle
+where m.networth = (select max(networth) from movieexec)
+
+3.1
+select s.name
+from classes as c
+natural join ships as s
+where c.displacement>35000
+
+3.2
+select s.name
+from classes as c
+join ships as s
+using(class)
+where c.displacement>35000
+
+3.3
+select s.name
+from classes as c
+inner join ships as s on s.class=c.class
+where c.displacement>35000
+
+3.4
+select o.ship, c.numguns, c.displacement
+from outcomes as o
+inner join ships as s on o.ship = s.name
+inner join classes c on s.class = c.class 
+where o.battle = 'Guadalcanal'
+
+3.5
+select country
+from classes
+group by country
+having count(type) = 2 
+
+3.6
+select count(s.name), c.country, o.battle
+from classes as c
+inner join ships as s on c.class = s.class
+inner join outcomes as o on s.name = o.ship
+group by c.country, o.battle
+having count(s.name) = 3

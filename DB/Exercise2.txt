@@ -1,0 +1,44 @@
+1.1
+select year||title A from movie
+
+1.2
+select trim(starname)|| ' plays in '||movietitle "Star_Movie"
+from starsin
+
+1.3
+select trim(name)||' was born on '||birthdate||' and lives at '||address
+from moviestar
+
+1.4
+select title||' starts with S' 
+from movie
+where title like 'S%'
+
+2.1
+DESCRIBE printer
+
+2.2
+DESC LAPTOP
+
+2.3
+SELECT DISTINCT CD FROM PC
+ORDER BY CD ASC
+
+2.4
+SELECT DISTINCT model, CD FROM PC
+ORDER BY model desc, cd desc
+
+2.5
+SELECT * FROM PRINTER 
+WHERE COLOR = 'n'
+ORDER BY PRICE DESC
+
+3.1
+select class, country, displacement/(numguns+bore) as coef 
+from classes
+order by coef desc
+
+3.2
+select ship||' sunk in battle '||battle
+from outcomes
+where result = 'sunk'

@@ -1,0 +1,43 @@
+1.1
+select name||' e bogat'
+from movieexec
+where networth > 100000000
+
+1.2
+select title, nvl(length,year)
+from movie
+
+1.3
+select nvl2(length,title,to_char(year))
+from movie
+
+2.1
+select type, 
+case when type like('P%') then 'exists'
+else 'not exists'
+end
+from product
+
+2.2
+select 
+case when type like('%P%') then replace(type,'P','Z')
+when type like('%p%') then replace(type,'p','Q')
+else 'not exists'
+end
+from product
+
+3.1
+select 
+case when mod(launched,2)=0 then 'even'
+when mod(launched,2)<>0 then 'odd'
+end
+from ships
+
+3.2
+select
+DECODE(result, 
+'sunk', 'potunal',
+'damaged', 'povreden',
+'ok','raboti',
+'OK', 'raboti') res
+from outcomes
