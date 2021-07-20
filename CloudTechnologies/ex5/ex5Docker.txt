@@ -1,0 +1,6 @@
+docker run -p 8899:8888 brianaustin/jupydocker
+docker container ls
+
+pip install jupyterlab
+export PATH="$HOME/.local/bin:$PATH"
+jupyter-lab

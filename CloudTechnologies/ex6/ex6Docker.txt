@@ -1,0 +1,4 @@
+docker login registry.gitlab.com
+docker pull jess/rainbowstream
+docker tag 388056c9a683 registry.gitlab.com/tsaribrodsky/vutp-docker6
+docker push registry.gitlab.com/tsaribrodsky/vutp-docker6

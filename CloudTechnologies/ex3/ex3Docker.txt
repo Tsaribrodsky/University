@@ -1,0 +1,28 @@
+docker run hello-world
+
+docker pull busybox
+docker images
+docker run busybox
+docker run busybox echo "hello from busybox"
+docker ps
+docker ps -a
+docker run -it busybox sh
+ls
+uptime
+rm -rf bin
+exit
+docker rm aad9ce92a296 0389733a258b
+docker rm $(docker ps -a -q -f status=exited)
+docker container prune
+docker run --rm prakhar1989/static-site
+docker run -d -P --name static-site prakhar1989/static-site
+docker port static-site
+http://localhost:32769   (into mozila)
+docker stop static-site
+docker pull ubuntu:18.04
+
+git clone https://github.com/prakhar1989/docker-curriculum.git
+cd docker-curriculum/flask-app
+docker build -t yourusername/catnip .
+docker run -p 8888:5000 yourusername/catnip
+

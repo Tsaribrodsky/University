@@ -1,0 +1,105 @@
+sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu groovy stable"
+
+sudo snap install docker
+sudo chmod 666 /var/run/docker.sock
+docker image pull ubuntu:latest
+
+docker system df -v
+sudo docker run -h mybuntu -it ubuntu /bin/bash
+exit
+sudo docker stop ec06d592f236
+sudo docker rm -f ec06d592f236his
+
+
+
+danny@danny:~$ history 
+    1  killall VBoxClient
+    2  kill VBoxClient
+    3  VBoxClient --clipboard
+    4  sudo apt install virtualbox-guest-x11
+    5  VBoxClient --help
+    6  VBoxClient --clipboard --draganddrop
+    7  VBoxClient --clipboard
+    8  VBoxClient --clipboard|--draganddro
+    9  VBoxClient --clipboard
+   10  killall VBoxClient
+   11  VBoxClient --clipboard
+   12  VBoxClient --clipboard-mode
+   13  sudo apt-get install build-essential virtualbox-guest-x11 virtualbox-guest-dkms
+   14  VBoxClient --clipboard
+   15  kill VBoxClient
+   16  VBoxService --help
+   17  VBoxClient --clipboard
+   18  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   19  lsb_release -cs
+   20  sudo apt-get update 
+   21  sudo apt-get install docker-ce docker-ce-cli containerd.io
+   22  echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+   23  sudo apt-get install docker-ce
+   24  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+   25  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   26  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+   27  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   28  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu groovy stable"
+   29  docker image pull ubuntu:lateset
+   30  snap info docker
+   31  sudo snap install docker
+   32  docker image pull ubuntu:lateset
+   33  docker image pull ubuntu:latest
+   34  sudo chmod 666 /var/run/docker.sock
+   35  docker image pull ubuntu:latest
+   36  docker container ls -s
+   37  docker system df
+   38  docker system df -v
+   39  sudo docker run -i -t mybuntu ubuntu /bin/bash
+   40  sudo docker run -it mybuntu ubuntu /bin/bash
+   41  docker run --help
+   42  sudo docker run -h mybuntu -it ubuntu /bin/bash
+   43  docker system df -v
+   44  history 
+   45  sudo docker ps –a
+   46  docker ps --help
+   47  sudo docker ps
+   48  docker system df -v
+   49  sudo chmod 666 /var/run/docker.sock
+   50  docker system df -v
+   51  sudo docker ps –a
+   52  sudo docker ps
+   53  sudo docker run -h mybuntu -it ubuntu /bin/bash
+   54  docker stop
+   55  docker stop mybuntu
+   56  docker container stop mybuntu
+   57  docker container stop ubuntu
+   58  docker stop ubuntu
+   59  docker stop
+   60  docker ps -l
+   61  docker stop ec06d592f236
+   62  docker ps -l
+   63  docker stop --help
+   64  docker ps -a
+   65  docker stop ubuntu
+   66  sudo docker ps -aqf "name=ubuntu"
+   67  sudo docker ps -aqf "name=^ubuntu$"
+   68  sudo docker ps -a "name=^ubuntu$"
+   69  docker ps -a
+   70  sudo docker stop ec06d592f236
+   71  docker ps -a
+   72  sudo docker rm -f ubuntu
+   73  sudo docker rm -f ec06d592f236
+   74  docker ps -a
+   75  history 
+danny@danny:~$ 
+

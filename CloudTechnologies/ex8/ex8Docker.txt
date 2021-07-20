@@ -1,0 +1,31 @@
+sudo apt-get install virtualbox
+
+base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+sudo install /tmp/docker-machine /usr/local/bin/docker-machine
+
+VBoxManage modifyvm vm-name --nested-hw-virt on  //* On my Linux Mint
+
+sudo docker-machine create --driver virtualbox manager1
+docker-machine create -d virtualbox --virtualbox-no-vtx-check manager1
+
+
+docker-machine ssh manager1
+
+
+
+
+
+docker run --restart=unless-stopped -d -p 8500:8500 -h consul1 progrium/consul -server -bootstrap
+
+docker ps
+
+docker run --restart=unless-stopped -d -p 3375:2375 swarm manage consul://172.17.0.1:8500
+
+docker ps
+
+docker -H=tcp://172.17.0.2:2375 run -d swarm join --advertise=172.17.0.2:2375 consul://172.17.0.1:8500
+
+
+
+
