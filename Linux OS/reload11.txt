@@ -1,0 +1,36 @@
+ 1. vi /boot/grub2/grub.cfg
+    set timeout=10
+    :wq
+    
+ 2. reboot
+    e
+    rw init=/sysroot/bin/sh
+    Ctrl+x
+    A critical error has occurred while running the virtual machine and the machine execution has been stopped. - След няколко опита се отказах. Върнах и снапшота, същата грешка излиза.
+
+ 3. vi /boot/grub2/grub.cfg
+    set superusers="student"
+    password student parola
+    :wq
+  
+ 4. reboot
+    e
+    rw init=/sysroot/bin/sh
+    Зареди без парола.
+
+ 5. systemctl
+    36 units listed. Има скриншот.
+
+ 6. systemctl  disable cups
+    Failed to execute operation: No such file or directory
+
+ 7. [root@localhost ~]# dmesg | grep -i "NIC"
+[   29.911595] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+
+ 8. mkinitrd /boot/initramfs-test-student.img test-student.img
+Kernel version test-student.img has no module directory /lib/modules/test-student.img
+
+ 9. cat /etc/initramfs-tools/initramfs.conf
+cat: /etc/initramfs-tools/initramfs.conf: No such file or directory
+
+10. -

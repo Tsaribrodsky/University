@@ -1,0 +1,73 @@
+ Променливи на средата
+
+ 1. answer=42
+    [danny@localhost ~]$ echo $answer
+    42
+
+ 2. unset answer
+    [danny@localhost ~]$ echo $answer
+
+
+ 3. var1=23 && var2=5 && export var1
+
+ 4. bash -c 'echo $var1'
+    23
+
+ 5. env
+    var1=23
+    XDG_SESSION_ID=2
+    HOSTNAME=localhost.localdomain
+    SHELL=/bin/bash
+    TERM=xterm-256color
+    HISTSIZE=1000
+    USER=danny
+
+ 6. echo Hello $USER
+    Hello danny
+
+ 7. MyLANG=$LANG
+
+ 8. var1=Val && var2=orghul && echo ${var1}ar M${var2}is
+    Valar Morghulis
+
+
+ Заместване на име на команда. Псевдоними.
+
+ 1. type rm
+    rm is hashed (/bin/rm)
+
+ 2. touch testfile.txt
+    alias rm='rm -i'
+    rm testfile.txt 
+    rm: remove regular empty file ‘testfile.txt’? y
+
+ 3. alias
+    alias egrep='egrep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias grep='grep --color=auto'
+    alias l.='ls -d .* --color=auto'
+    alias ll='ls -l --color=auto'
+    alias ls='ls --color=auto'
+    alias rm='rm -i'
+    alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+
+ 4. vi .bash_profile
+    alias rm='rm -i'
+    :wq
+
+ 5. alias city='echo Odessa'
+
+ 6. set -x
+    ++ printf '\033]0;%s@%s:%s\007' danny localhost '~'
+
+ 7. city
+    + echo Odessa
+    Odessa
+    ++ printf '\033]0;%s@%s:%s\007' danny localhost '~'
+    rm
+    + rm -i
+    rm: missing operand
+    Try 'rm --help' for more information.
+    ++ printf '\033]0;%s@%s:%s\007' danny localhost '~'
+ 
+ 8. set +x 

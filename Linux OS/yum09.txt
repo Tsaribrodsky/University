@@ -1,0 +1,179 @@
+ 1. yum search httpd
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.telepoint.bg
+ * extras: mirror.telepoint.bg
+ * updates: mirror.telepoint.bg
+============================== N/S matched: httpd ==============================
+keycloak-httpd-client-install.noarch : Tools to configure Apache HTTPD as
+                                     : Keycloak client
+libmicrohttpd-devel.i686 : Development files for libmicrohttpd
+libmicrohttpd-devel.x86_64 : Development files for libmicrohttpd
+
+ 2. yum info httpd
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.telepoint.bg
+ * extras: mirror.telepoint.bg
+ * updates: mirror.telepoint.bg
+Available Packages
+Name        : httpd
+Arch        : x86_64
+Version     : 2.4.6
+Release     : 97.el7.centos
+
+ 3. yum install httpd
+Running transaction
+  Installing : httpd-tools-2.4.6-97.el7.centos.x86_64                       1/3 
+  Installing : mailcap-2.1.41-2.el7.noarch                                  2/3 
+  Installing : httpd-2.4.6-97.el7.centos.x86_64                             3/3 
+  Verifying  : httpd-2.4.6-97.el7.centos.x86_64                             1/3 
+  Verifying  : mailcap-2.1.41-2.el7.noarch                                  2/3 
+  Verifying  : httpd-tools-2.4.6-97.el7.centos.x86_64                       3/3 
+
+Installed:
+  httpd.x86_64 0:2.4.6-97.el7.centos                                            
+
+Dependency Installed:
+  httpd-tools.x86_64 0:2.4.6-97.el7.centos     mailcap.noarch 0:2.1.41-2.el7    
+
+Complete!
+
+ 4. yum remove httpd
+Remove  1 Package
+
+Installed size: 9.4 M
+Is this ok [y/N]: y
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Erasing    : httpd-2.4.6-97.el7.centos.x86_64                             1/1 
+  Verifying  : httpd-2.4.6-97.el7.centos.x86_64                             1/1 
+
+Removed:
+  httpd.x86_64 0:2.4.6-97.el7.centos                                            
+
+Complete!
+
+ 5. yum update httpd
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.wwfx.net
+ * extras: mirror.wwfx.net
+ * updates: mirror.wwfx.net
+No packages marked for update
+
+ 6. yum grouplist
+Available Environment Groups:
+   Minimal Install
+   Compute Node
+   Infrastructure Server
+   File and Print Server
+   Basic Web Server
+   Virtualization Host
+   Server with GUI
+   GNOME Desktop
+   KDE Plasma Workspaces
+   Development and Creative Workstation
+Available Groups:
+   Compatibility Libraries
+
+ 7. yum groupinfo 'Web Server'
+Group: Web Server
+ Group-Id: web-server
+ Description: Allows the system to act as a web server, and run Perl and Python web applications.
+ Mandatory Packages:
+    httpd
+ Default Packages:
+   +crypto-utils
+   +httpd-manual
+   +mod_fcgid
+   +mod_ssl
+ Optional Packages:
+   certmonger
+
+ 8. yum groupinstall 'Web Server'
+Running transaction
+  Installing : perl-Newt-1.08-36.el7.x86_64                                   1/5 
+  Installing : crypto-utils-2.4.1-42.el7.x86_64                               2/5 
+  Installing : httpd-manual-2.4.6-97.el7.centos.noarch                        3/5 
+  Installing : 1:mod_ssl-2.4.6-97.el7.centos.x86_64                           4/5 
+  Installing : mod_fcgid-2.3.9-6.el7.x86_64                                   5/5 
+  Verifying  : mod_fcgid-2.3.9-6.el7.x86_64                                   1/5 
+  Verifying  : 1:mod_ssl-2.4.6-97.el7.centos.x86_64                           2/5 
+  Verifying  : crypto-utils-2.4.1-42.el7.x86_64                               3/5 
+  Verifying  : perl-Newt-1.08-36.el7.x86_64                                   4/5 
+  Verifying  : httpd-manual-2.4.6-97.el7.centos.noarch                        5/5 
+
+Installed:
+  crypto-utils.x86_64 0:2.4.1-42.el7   httpd-manual.noarch 0:2.4.6-97.el7.centos  
+  mod_fcgid.x86_64 0:2.3.9-6.el7       mod_ssl.x86_64 1:2.4.6-97.el7.centos       
+
+Dependency Installed:
+  perl-Newt.x86_64 0:1.08-36.el7                                                  
+
+Complete!
+
+ 9. yum groupremove 'Web Server'
+Running transaction
+  Erasing    : httpd-manual-2.4.6-97.el7.centos.noarch                        1/4 
+  Erasing    : 1:mod_ssl-2.4.6-97.el7.centos.x86_64                           2/4 
+  Erasing    : crypto-utils-2.4.1-42.el7.x86_64                               3/4 
+  Erasing    : mod_fcgid-2.3.9-6.el7.x86_64                                   4/4 
+  Verifying  : mod_fcgid-2.3.9-6.el7.x86_64                                   1/4 
+  Verifying  : 1:mod_ssl-2.4.6-97.el7.centos.x86_64                           2/4 
+  Verifying  : crypto-utils-2.4.1-42.el7.x86_64                               3/4 
+  Verifying  : httpd-manual-2.4.6-97.el7.centos.noarch                        4/4 
+
+Removed:
+  crypto-utils.x86_64 0:2.4.1-42.el7   httpd-manual.noarch 0:2.4.6-97.el7.centos  
+  mod_fcgid.x86_64 0:2.3.9-6.el7       mod_ssl.x86_64 1:2.4.6-97.el7.centos       
+
+Complete!
+
+
+10. yum groupupdate 'Web Server'
+Loaded plugins: fastestmirror
+Determining fastest mirrors
+ * base: mirrors.daticum.com
+ * extras: mirrors.daticum.com
+ * updates: mirrors.daticum.com
+base                                                       | 3.6 kB  00:00:00     
+extras                                                     | 2.9 kB  00:00:00     
+updates                                                    | 2.9 kB  00:00:00     
+(1/4): extras/7/x86_64/primary_db                          | 236 kB  00:00:00     
+(2/4): base/7/x86_64/group_gz                              | 153 kB  00:00:00     
+(3/4): base/7/x86_64/primary_db                            | 6.1 MB  00:00:01     
+(4/4): updates/7/x86_64/primary_db                         | 8.0 MB  00:00:02     
+Maybe run: yum groups mark install (see man yum)
+No packages in any requested group available to install or update
+
+11. yum update
+Installed:
+  kernel.x86_64 0:3.10.0-1160.25.1.el7 kernel-devel.x86_64 0:3.10.0-1160.25.1.el7
+
+Updated:
+  NetworkManager.x86_64 1:1.18.8-2.el7_9                                          
+  NetworkManager-libnm.x86_64 1:1.18.8-2.el7_9                                    
+  NetworkManager-team.x86_64 1:1.18.8-2.el7_9                                     
+  NetworkManager-tui.x86_64 1:1.18.8-2.el7_9                                      
+  bind-export-libs.x86_64 32:9.11.4-26.P2.el7_9.5                                 
+  centos-release.x86_64 0:7-9.2009.1.el7.centos                                   
+  coreutils.x86_64 0:8.22-24.el7_9.2                                              
+  curl.x86_64 0:7.29.0-59.el7_9.1                                                 
+  device-mapper.x86_64 7:1.02.170-6.el7_9.5                                       
+  device-mapper-event.x86_64 7:1.02.170-6.el7_9.5
+
+12. yum check-update
+NetworkManager.x86_64                    1:1.18.8-2.el7_9                  updates
+NetworkManager-libnm.x86_64              1:1.18.8-2.el7_9                  updates
+NetworkManager-team.x86_64               1:1.18.8-2.el7_9                  updates
+NetworkManager-tui.x86_64                1:1.18.8-2.el7_9                  updates
+bind-export-libs.x86_64                  32:9.11.4-26.P2.el7_9.5           updates
+centos-release.x86_64                    7-9.2009.1.el7.centos             updates
+coreutils.x86_64                         8.22-24.el7_9.2                   updates
+curl.x86_64                              7.29.0-59.el7_9.1                 updates
+device-mapper.x86_64                     7:1.02.170-6.el7_9.5              updates
+device-mapper-event.x86_64               7:1.02.170-6.el7_9.5              updates

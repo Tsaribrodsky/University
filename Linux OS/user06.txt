@@ -1,0 +1,104 @@
+ 1. ssh danny@localhost -p 2222
+
+ 2. id danny
+    uid=1000(danny) gid=1000(danny) groups=1000(danny)
+
+ 3. w
+     11:33:33 up  2:17,  2 users,  load average: 0,00, 0,01, 0,05
+    USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+    danny    tty1                      09:16    2:17m  0.06s  0.28s login -- danny
+    danny    pts/0    gateway          09:19    5.00s  0.10s  0.03s w
+
+    who
+    danny    tty1         2021-05-15 09:16
+    danny    pts/0        2021-05-15 09:19 (gateway)
+
+ 4.1. uname -a
+      Linux localhost.localdomain 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+4.2. cat /etc/*release
+     CentOS Linux release 7.9.2009 (Core)
+     NAME="CentOS Linux"
+     VERSION="7 (Core)"
+     ID="centos"
+     ID_LIKE="rhel fedora"
+     VERSION_ID="7"
+     PRETTY_NAME="CentOS Linux 7 (Core)"
+     ANSI_COLOR="0;31"
+     CPE_NAME="cpe:/o:centos:centos:7"
+     HOME_URL="https://www.centos.org/"
+     BUG_REPORT_URL="https://bugs.centos.org/"
+
+     CENTOS_MANTISBT_PROJECT="CentOS-7"
+     CENTOS_MANTISBT_PROJECT_VERSION="7"
+     REDHAT_SUPPORT_PRODUCT="centos"
+     REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+     CentOS Linux release 7.9.2009 (Core)
+     CentOS Linux release 7.9.2009 (Core)
+
+ 5.1. find / -name bashrc
+      /etc/bashrc
+
+ 5.2. man touch
+
+ 6.1. su root
+      Password:
+
+ 6.2. [danny@localhost ~]$ su -l root
+      Password: 
+      Last login: Sat May 15 11:40:31 EEST 2021 on pts/0
+      [root@localhost ~]#
+
+      su-
+      [root@localhost ~]# pwd
+      /root
+
+ 7. man who
+    /heading
+    q
+
+ 8. [root@localhost ~]# whoami
+    root
+
+ 9. [root@localhost ~]# who -a
+               system boot  2021-05-15 09:15
+    danny    + tty1         2021-05-15 09:16 04:21         710
+               run-level 3  2021-05-15 09:16
+    danny    + pts/0        2021-05-15 09:19   .          1319 (gateway)
+
+10. [danny@localhost ~]$ w
+    13:57:12 up  4:41,  2 users,  load average: 0.00, 0.01, 0.05
+    USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+    danny    tty1                      09:16    4:40m  0.06s  0.28s login -- danny
+    danny    pts/0    gateway          09:19    0.00s  0.26s  0.02s w
+
+11. id
+    uid=1000(danny) gid=1000(danny) groups=1000(danny) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+12. su danny
+    Password: 
+
+13. ? Тази стъпка няма смисъл
+
+14. [danny@localhost ~]$ useradd -m -d /home/silvia silvia
+    useradd: Permission denied.
+    useradd: cannot lock /etc/passwd; try again later.
+
+15. [danny@localhost ~]$ sudo useradd -m -d /home/silvia silvia
+    [sudo] password for danny: 
+    danny is not in the sudoers file.  This incident will be reported.
+
+    [danny@localhost ~]$ su - root
+    Password: 
+    [root@localhost ~]# useradd -m -d /home/silvia silvia
+
+
+16. ls -lh
+    -rw-rw-r--. 1 danny danny    0 Apr 17 01:23 test.file
+    [root@localhost danny]# chown root test.file
+    ls -lh
+    -rw-rw-r--. 1 root  danny    0 Apr 17 01:23 test.file
+
+16.1. [danny@localhost ~]$ chown root test.file 
+chown: changing ownership of ‘test.file’: Operation not permitted

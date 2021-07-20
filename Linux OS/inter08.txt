@@ -1,0 +1,83 @@
+Свързани команди. Специални символи. Пренасочване (redirection). Прехвърляне (Piping)
+
+ 1. pwd ; pwd
+    /home/danny
+    /home/danny
+
+ 2. cd /etc && ls
+    adjtime                  inittab                   rc5.d
+    aliases                  inputrc                   rc6.d
+
+    cd /root && ls
+    bash: cd: /root: Permission denied
+
+ 3. cd ; touch test42 && echo it worked || echo it failed
+    it worked
+    cd /bin; touch test42 && echo it worked || echo it failed
+    touch: cannot touch ‘test42’: Permission denied
+    it failed
+
+ 4. sleep 200 &
+    [1] 3292
+
+ 5. grep bash /etc/passwd | cut -d: -f1 | sort > bashusers.txt
+
+ 6. ls /etc | grep -i conf | sort
+    asound.conf
+    chkconfig.d
+    chrony.conf
+    dracut.conf
+    dracut.conf.d
+    e2fsck.conf
+    host.conf
+    kdump.conf
+    krb5.conf
+    krb5.conf.d
+
+ 7. echo \""Hello World with strange' characters \ * [ } ~ \\ . "\"
+    "Hello World with strange' characters \ * [ } ~ \ . "
+
+ 8. ifconfig | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"
+10.0.2.15
+255.255.255.0
+10.0.2.255
+127.0.0.1
+255.0.0.0
+
+Общо търсене на име на файл
+
+ 1. find /etc -type f -name '*.conf' | wc -l
+    find: ‘/etc/pki/CA/private’: Permission denied
+    find: ‘/etc/pki/rsyslog’: Permission denied
+    find: ‘/etc/dhcp’: Permission denied
+    find: ‘/etc/lvm/archive’: Permission denied
+    find: ‘/etc/lvm/backup’: Permission denied
+    find: ‘/etc/lvm/cache’: Permission denied
+    find: ‘/etc/grub.d’: Permission denied
+    find: ‘/etc/selinux/targeted/active’: Permission denied
+    find: ‘/etc/selinux/final’: Permission denied
+    find: ‘/etc/polkit-1/rules.d’: Permission denied
+    find: ‘/etc/polkit-1/localauthority’: Permission denied
+    find: ‘/etc/firewalld’: Permission denied
+    find: ‘/etc/audisp’: Permission denied
+    find: ‘/etc/audit’: Permission denied
+    find: ‘/etc/sudoers.d’: Permission denied
+    87
+ 2. Командата cp -r би запазала файловата структура при копиране, а с командата find ще бъдат намерени всички файлове и копирани в /backup/
+
+ 3. locate bash
+    /etc/bash_completion.d
+    /etc/bashrc
+    /etc/bash_completion.d/git
+    /etc/bash_completion.d/iprutils
+    /etc/bash_completion.d/oscap
+    /etc/skel/.bash_logout
+    /etc/skel/.bash_profile
+    /etc/skel/.bashrc
+    /home/danny/.bash_history
+    /home/danny/.bash_logout
+
+ 4. touch test.file
+    updatedb
+    locate test.file
+    /home/danny/test.file

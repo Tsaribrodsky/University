@@ -1,0 +1,41 @@
+sudo yum install vim-enhanced -y
+vim vimfile.txt
+writing some text lines
+yy
+p
+dd
+p
+:wq
+
+cd ..
+cd ..
+ls -lh
+cp /etc/passwd   ~/passwd.copy
+cd home/danny/
+ls -lh
+Esc
+G
+A
+Esc
+o
+Esc
+p
+Esc
+:wq
+
+dwwP
+
+Esc
+G$
+gg
+
+:/is n
+:wq
+
+:q!
+
+i 1 'Escape Key' qa yyp 'Ctrl a' q 5@a
+
+echo Monday | sed 'y/Mo/Sa/'
+
+awk -F: '{ print $1 }' /etc/passwd

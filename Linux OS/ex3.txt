@@ -1,0 +1,46 @@
+su root
+sudo yum install net-tools
+su danny
+ifconfig
+172.16.217.128
+
+su root
+sudo ifconfig ens33 172.16.217.128 netmask 255.255.255.252
+ifconfig
+255.255.255.252
+
+sudo systemctl restart network
+255.255.255.0
+
+vim /etc/sysconfig/network-scripts/ifcfg-ens33
+BOOTPROTO="static"
+IPADDR="172.16.217.129"
+NETMASK="255.255.255.0"
+NETWORK="172.16.217.0"
+Esc
+:wq
+
+sudo systemctl restart network
+172.16.217.129
+
+vim /etc/sysconfig/network-scripts/ifcfg-ens33
+BOOTPROTO="dhcp"
+Esc
+:wq
+sudo systemctl restart network
+172.16.217.128
+
+vim /etc/resolv.conf
+nameserver 8.8.8.8
+
+sudo yum install bind-utils
+nslookup facebook.com
+157.240.9.35
+traceroute 8.8.8.8
+
+systemctl enable sshd.service
+systemctl start sshd.service
+systemctl status sshd.service
+ss -tulpn | grep ':22'
+
+Putty? I use Linux Mint.

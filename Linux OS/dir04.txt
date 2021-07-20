@@ -1,0 +1,110 @@
+ 1. pwd
+    /home/danny
+
+ 2. cd /etc/
+    [danny@localhost etc]$
+
+ 3. cd ~
+    [danny@localhost ~]$ 
+
+ 4. cd /bo(tab)g(tab) = cd /boot/grub (9)
+    [danny@localhost grub]$
+
+ 5. cd -, cd ..
+    [danny@localhost ~]$
+
+ 6. cd /
+    [danny@localhost /]$ 
+
+ 7. ls
+    bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
+    boot  etc  lib   media  opt  root  sbin  sys  usr
+
+ 8. ls -l
+    total 20
+    lrwxrwxrwx.   1 root root    7 Apr 16 23:47 bin -> usr/bin
+    dr-xr-xr-x.   5 root root 4096 Apr 17 00:20 boot
+    drwxr-xr-x.  20 root root 3080 Apr 24 08:48 dev
+    drwxr-xr-x.  79 root root 8192 Apr 24 08:48 etc
+    drwxr-xr-x.   3 root root   19 Apr 17 00:19 home
+    lrwxrwxrwx.   1 root root    7 Apr 16 23:47 lib -> usr/lib
+    lrwxrwxrwx.   1 root root    9 Apr 16 23:47 lib64 -> usr/lib64
+
+ 9. ls /etc/
+    adjtime                  init.d                    rc3.d
+    aliases                  inittab                   rc4.d
+    aliases.db               inputrc                   rc5.d
+    alternatives             iproute2                  rc6.d
+    anacrontab               issue                     rc.d
+    asound.conf              issue.net                 rc.local
+    audisp                   kdump.conf                redhat-release
+    audit                    kernel                    resolv.conf
+    bash_completion.d        krb5.conf                 rpc
+    bashrc                   krb5.conf.d               rpm
+    ...
+
+10. ls /bin/ /sbin/
+    /bin/:
+    [                                   nl-link-enslave
+    a2p                                 nl-link-ifindex2name
+    aclocal                             nl-link-list
+    aclocal-1.13                        nl-link-name2ifindex
+    addr2line                           nl-link-release
+    ...
+    /sbin/:
+    accessdb                   lvs
+    addgnupghome               lvscan
+    addpart                    makedumpfile
+    adduser                    matchpathcon
+    agetty                     mkdict
+    ...
+    
+11. ls ~
+    dir1  LinuxFun.pdf  newdir  test.file  wolf.pdf
+
+12. ls -a /home/danny/
+    .   .bash_history  .bash_profile  dir1          newdir  test.file
+    ..  .bash_logout   .bashrc        LinuxFun.pdf  .ssh    wolf.pdf
+
+13. ls -lh /boot/
+    total 97M
+    -rw-r--r--. 1 root root 150K Oct 19  2020 config-3.10.0-1160.el7.x86_64
+    drwxr-xr-x. 3 root root   17 Apr 16 23:47 efi
+    drwxr-xr-x. 2 root root   27 Apr 16 23:56 grub
+    drwx------. 5 root root   97 Apr 17 00:20 grub2
+    -rw-------. 1 root root  60M Apr 17 00:12 initramfs-0-            rescue-2cda85b1a1734a0e87dbb8bbd58a94af.img
+    -rw-------. 1 root root  21M Apr 17 00:20   initramfs-3.10.0-1160.el7.x86_64.img
+    -rw-r--r--. 1 root root 314K Oct 19  2020 symvers-3.10.0-1160.el7.x86_64.gz
+    -rw-------. 1 root root 3,5M Oct 19  2020       System.map-3.10.0-1160.el7.x86_64
+    -rwxr-xr-x. 1 root root 6,5M Apr 17 00:12 vmlinuz-0-    rescue-2cda85b1a1734a0e87dbb8bbd58a94af
+    -rwxr-xr-x. 1 root root 6,5M Oct 19  2020 vmlinuz-3.10.0-1160.el7.x86_64
+
+14. mkdir /home/danny/testdir
+
+15. cd /etc/
+    [danny@localhost etc]$
+    mkdir ../home/danny/newdir
+    dir1  LinuxFun.pdf  newdir  testdir  test.file  wolf.pdf
+
+16. mkdir -p ~/dir1/dir2/dir3/
+    [danny@localhost ~]$ cd dir1/dir2/dir3/
+    [danny@localhost dir3]$
+
+17. rmdir /home/danny/testdir/
+    dir1  LinuxFun.pdf  newdir  test.file  wolf.pdf
+
+18. pushd ~/dir1/
+    dirs
+    ~/dir1 ~
+    pushd dir2/
+    ~/dir1/dir2 ~/dir1 ~
+    pushd dir3/
+    ~/dir1/dir2/dir3 ~/dir1/dir2 ~/dir1 ~
+    dirs -v
+     0  ~/dir1/dir2/dir3
+    1  ~/dir1/dir2
+    2  ~/dir1
+    3  ~
+    popd
+    ~/dir1/dir2 ~/dir1 ~
+    

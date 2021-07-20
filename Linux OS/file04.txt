@@ -1,0 +1,29 @@
+ 1. ls -l /bin/
+ 2. file /bin/cat /etc/passwd /usr/bin/passwd
+ 3.
+    a)
+    wget http://www.w3resource.com/w3r_images/linux.png
+    wget http://linux-training.be/files/books/LinuxFun.pdf
+
+    b)
+    Преименувайте linux.png като wolf.pdf (ползвайте mv)
+    Изведете на екран вида на файла linux.pdf и LinucFun.pdf
+
+    Предполагам че имате предвид wolf.pdf
+
+    file LinuxFun.pdf linux.png
+    mv linux.png wolf.pdf
+    file LinuxFun.pdf wolf.pdf
+ 4. mkdir ~/touched
+    cd touched/
+ 5. touch today.txt yesterday.txt
+ 6. touch -d "2021-04-18 20:03" yesterday.txt
+ 7. cp yesterday.txt copy.yesterday.txt
+ 8. mv copy.yesterday.txt kim
+ 9. mkdir ~/testbackup
+    cp kim today.txt yesterday.txt ~/testbackup/
+10. rm -rf testbackup/
+    mkdir ~/testbackup
+    cp -R /etc/*.conf ~/testbackup/
+    cd testbackup/
+    rename .conf .backup *.conf
