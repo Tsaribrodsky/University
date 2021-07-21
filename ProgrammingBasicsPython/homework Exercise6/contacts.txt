@@ -1,0 +1,3 @@
+denis, sofia, 1998, 9876, deni, arch, pc
+ani, sofia, 2002, 96543, anita, student, painting
+danny, sofia, 1992, 9876, danka@gbg.bg, dev, soft

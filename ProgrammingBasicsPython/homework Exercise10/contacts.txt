@@ -1,0 +1,3 @@
+kircho,sofia,9811,kiro@,driver,girls
+poli,varna,9555,poli@,singer,dogs
+ani,sofia,09877,anita@,student,painting

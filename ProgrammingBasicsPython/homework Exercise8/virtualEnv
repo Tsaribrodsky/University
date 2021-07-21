@@ -1,0 +1,51 @@
+#Create virtual environments for each python interpretator 2.7 and 3.x and install 
+#some packages using: pip list ..., pip search ..., pip install ... , etc. 
+
+sudo apt install python-pip
+
+pip -V
+pip 19.0.3 from /usr/local/lib/python3.5/dist-packages/pip-19.0.3-py3.5.egg/pip (python 3.5)
+
+
+pip list
+
+pip search Flask
+
+sudo pip install Flask
+
+pip show Flask
+
+python3 -m pip install --user virtualenv
+
+python3 -m virtualenv env
+
+source env/bin/activate
+
+which python
+
+pip install requests
+
+pip install requests==2.7
+
+deactivate
+
+python3 -m virtualenv env
+
+source env/bin/activate
+
+which python
+
+virtualenv -p /usr/bin/python2.7 venv
+
+source venv/bin/activate
+
+python -V
+Python 2.7.12
+
+pip install requests
+
+pip freeze > requirements.txt
+
+cat requirements.txt
+
+deactivate

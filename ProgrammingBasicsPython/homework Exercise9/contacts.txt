@@ -1,0 +1,6 @@
+ani,sofia,888,anita,student,painting
+denis,sofia,089,deni@,arch,pc
+danny,sofia,978,danka,dev,soft
+Mrs.Pumpernickel,London,98,pump,aristocrat,tea
+pancho,sofia,985,pancho@,princ,cats
+pancho7,sofia7,8887,pancho@7,princ7,cats7
