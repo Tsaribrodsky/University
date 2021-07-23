@@ -1,0 +1,83 @@
+body{
+    font-family: Helvetica;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+div{
+    border:solid 1px lightgrey;
+    width: 50%;
+    height: 100%;
+    border-radius:3px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(98%, 98%, 98%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    border-spacing: 7px;
+}
+
+input[type=text]:not([name=username]){
+    width: 300px;
+}
+
+input[type=submit]{
+    margin-left: 255px;
+}
+
+tr.menu td{
+    border:solid 1px lightgrey;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    background-color: #0073B1;
+}
+
+tr.menu td:hover{
+    background-color: #0092E1;
+}
+
+tr.update_create td{
+    width: 130px;
+    height: 40px;
+    text-align: left;
+    color: #6c6c6c;
+}
+
+tr.views td{
+    width: 130px;
+    height: 40px;
+    text-align: left;
+    color: #6c6c6c;
+    border-bottom: 1px solid #ddd;
+}
+
+p{
+    text-align:center;
+    font:24px Verdana;
+    color: darkgrey;
+    padding-top: 30px;
+}
+
+p.error{
+    color: red;
+    font:12px Verdana;
+}
+
+tr.inline td{
+    color: #6c6c6c;
+}
+
+tr.inline input[type=submit]{
+    margin-left: 5px;
+}

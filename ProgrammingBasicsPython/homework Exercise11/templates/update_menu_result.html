@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/style.css" media="screen">
+        <title>Contact book</title>
+    </head>
+    <body>
+        <div>
+            <p>Update a contact</p>
+            <form action='/update', method = 'post'>
+                <table>
+                    <tr class="update_create"><td>name</td><td><input type=text name="name" value="{}"></td></tr>
+                    <tr class="update_create"><td>address</td><td><input type=text name="address" value="{}"></td></tr>
+                    <tr class="update_create"><td>phone number</td><td><input type=text name="phone" value="{}"></td></tr>
+                    <tr class="update_create"><td>email</td><td><input type=text name="email" value="{}"></td></tr>
+                    <tr class="update_create"><td>profession</td><td><input type=text name="profession" value="{}"></td></tr>
+                    <tr class="update_create"><td>interests</td><td><input type=text name="interests" value="{}"></td></tr>
+                </table>
+            <input type=submit value=Submit>
+            </form>
+        </div>
+    </body>
+</html>
